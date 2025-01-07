@@ -50,7 +50,7 @@ class FlutterNfcKitPlugin : FlutterPlugin, MethodCallHandler, ActivityAware {
         private lateinit var nfcHandlerThread: HandlerThread
         private lateinit var nfcHandler: Handler
         private lateinit var methodChannel: MethodChannel
-        private lateinit var eventChannel: EventChannel
+        //private lateinit var eventChannel: EventChannel
         private var eventSink: EventSink? = null
 
         public fun handleTag(tag: Tag) {
@@ -248,7 +248,7 @@ class FlutterNfcKitPlugin : FlutterPlugin, MethodCallHandler, ActivityAware {
         methodChannel = MethodChannel(flutterPluginBinding.binaryMessenger, "flutter_nfc_kit/method")
         methodChannel.setMethodCallHandler(this)
 
-        eventChannel = EventChannel(flutterPluginBinding.binaryMessenger, "flutter_nfc_kit/event")
+        /*eventChannel = EventChannel(flutterPluginBinding.binaryMessenger, "flutter_nfc_kit/event")
         eventChannel.setStreamHandler(object : EventChannel.StreamHandler {
             override fun onListen(arguments: Any?, events: EventChannel.EventSink?) {
                 if (events != null) {
@@ -259,12 +259,12 @@ class FlutterNfcKitPlugin : FlutterPlugin, MethodCallHandler, ActivityAware {
             override fun onCancel(arguments: Any?) {
                 // No need to do anything here
             }
-        })
+        })*/
     }
 
     override fun onDetachedFromEngine(binding: FlutterPlugin.FlutterPluginBinding) {
         methodChannel.setMethodCallHandler(null)
-        eventChannel.setStreamHandler(null)
+        //eventChannel.setStreamHandler(null)
         nfcHandlerThread.quitSafely()
     }
 
