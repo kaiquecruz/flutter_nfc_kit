@@ -25,9 +25,9 @@ import io.flutter.plugin.common.MethodCall
 import io.flutter.plugin.common.MethodChannel
 import io.flutter.plugin.common.MethodChannel.MethodCallHandler
 import io.flutter.plugin.common.MethodChannel.Result
-//import io.flutter.plugin.common.EventChannel
-//import io.flutter.plugin.common.EventChannel.EventSink
-//import io.flutter.plugin.common.EventChannel.StreamHandler
+import io.flutter.plugin.common.EventChannel
+import io.flutter.plugin.common.EventChannel.EventSink
+import io.flutter.plugin.common.EventChannel.StreamHandler
 import org.json.JSONArray
 import org.json.JSONObject
 import java.io.IOException
